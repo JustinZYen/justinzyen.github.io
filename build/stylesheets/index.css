@@ -1,0 +1,121 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.main > section {
+    padding: 0px 20px;
+}
+
+.main > section * {
+    padding: 0;
+}
+
+.main > section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main > section:nth-child(odd) {
+    flex-direction: row;
+}
+
+.main > section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+
+/* Styling for specific element types */
+h1 {
+    font-size:50pt;
+    margin:0
+}
+
+h2 {
+    font-size:20pt;
+    margin:0
+}
+
+ul {
+    list-style-position: inside;
+}
+
+/* Styling for title area */
+#title-page {
+    background:linear-gradient(gray,50%,rgba(0, 0, 0, 0));
+    padding: 20px; 
+    height: 300px;
+    display:flex;
+    align-items:end;
+    flex-direction: row;
+}
+
+#title-page > img {
+    align-self:self-start;
+    height: 100%;
+}
+
+/* Styling for skills area */
+#skills li{
+    display:inline-block;
+}
+
+#skills li::after {
+    content:" ○";
+}
+#skills li:last-child:after {
+    content:"";
+}
+#skills li img {
+    height: 20px;
+}
+
+/* Styling for projects area */
+#projects > * {
+    max-width: 100%;
+}
+
+#projects .project {
+    display:flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+#projects .project:nth-child(even) {
+    flex-direction: row;
+}
+
+#projects .project:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+#projects .project .iframe-wrapper {
+    flex: 0 0 auto;
+    overflow: hidden;
+    width: calc(100vw * var(--scale-factor));
+    height: calc(100vh * var(--scale-factor));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects .project iframe {
+    flex: 0 0 auto;
+    width: 100vw;
+    height: 100vh;
+    -moz-transform: scale(var(--scale-factor), var(--scale-factor)); 
+    -webkit-transform: scale(var(--scale-factor), var(--scale-factor)); 
+    -o-transform: scale(var(--scale-factor), var(--scale-factor));
+    -ms-transform: scale(var(--scale-factor), var(--scale-factor));
+    transform: scale(var(--scale-factor), var(--scale-factor)); 
+    -moz-transform-origin: center;
+    -webkit-transform-origin: center;
+    -o-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+}
+
+#projects .project iframe:hover {
+    filter:brightness(95%)
+}
